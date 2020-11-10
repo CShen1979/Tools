@@ -1,0 +1,20 @@
+## When you delete your branch , both local and remote, they are actually still in your desktop
+
+git reflog
+
+# check the commit details in the list
+# i.e.: 
+# a1b2c3d4 HEAD@{27}: commit: <last commit message>
+
+# now either checkout revision or HEAD
+git checkout a1b2c3d4 
+# Or
+git checkout HEAD@{27}
+
+# maybe need to add -f . i.e. git checkout -f HEAD@{27}
+
+# Create branch. This can be done in Pycharm or visual studio.
+git branch recovered
+
+# You may want to push that back to remote
+git push origin recovered:recovered
